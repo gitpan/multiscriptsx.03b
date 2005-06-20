@@ -1,0 +1,19 @@
+<code>
+#!/usr/local/perl
+
+print "hello World perl\n";
+
+</code>
+<code python>
+#!/usr/local/python
+print "Hello World python"
+</code python>
+<code l="csh">
+#!/usr/local/csh
+echo "Hello World csh"
+</code>
+<code l="sh">
+#!/usr/local/sh
+date
+cal
+</code>

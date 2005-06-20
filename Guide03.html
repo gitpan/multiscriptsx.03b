@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<a href="http://sourceforge.net"> <img
+ src="http://sourceforge.net/sflogo.php?group_id=140681&amp;type=5"
+ alt="SourceForge.net Logo" border="0" height="62" width="210"></a>
+<p></p>
+<h1><b>The <a href="http://sourceforge.net/projects/sexx/"><span
+ style="background-color: pink;">Multiscript</span></a> Project Page</b></h1>
+<p></p>
+<br>
+<p>This program allows for multiple scripts to be put inside of a
+script file. Multiscript consists of
+a extensible Perl script that then runs the .sx scripts. It allows for
+the <b>files.sx</b> to contain more than one language
+by using tags to dilineate where the script code ends and begins.</p>
+<p>The Multiscript program loads the script.sx file. It then creates a
+temporary file to store the script code in between
+code tags. If a particular command option is selected it will then
+store the code in the temporary file and execute at the end of tag code
+block. The temporary file is used as a buffer to store execution script
+code. The temporary file is cleared at the end code tag. The temporary
+file is also removed at code completion.</p>
+<p></p>
+<h2><b>Key Benefits</b></h2>
+<p></p>
+<br>
+This Multiscript program is written in Perl.<br>
+The Multiscript program is extensible.<br>
+The Multiscript program allows multiple languages in a script<br>
+<p></p>
+<h3><b>Example script code</b></h3>
+<p></p>
+<br>
+<p>The <b>test.sx</b> file is listed as follows. It contains three
+code groups for helloworld. One code group is Perl, Python and ruby.
+Different code groups can be added to allow other languages in the same
+script. Command
+arguments can also be assigned to the scripts as well as version
+numbers.<br>
+<br>
+&lt;code&gt;<br>
+#!/usr/local/perl<br>
+print "hello World\n";<br>
+&lt;/code&gt;<br>
+<br>
+&lt;code python&gt;<br>
+#!/usr/local/python<br>
+print "Hello World"<br>
+&lt;/code python&gt;<br>
+<br>
+&lt;code ruby&gt;<br>
+#!/usr/local/python<br>
+puts "Hello World"<br>
+&lt;/code ruby&gt;<br>
+</p>
+<p>The following code for <b>test_args.sx</b> illustrates attributes
+and arguments that
+can be used to define code arguments and the language by the l and args
+attribute.</p>
+&lt;code l="perl" args="1 2 3 4 5 6"&gt; <br>
+#!/usr/local/perl <br>
+$numargs = $#ARGV + 1; <br>
+print "There are $numargs args\n";<br>
+&lt;/code&gt;
+<p>The following code illustrates Unix shell code for helloworld</p>
+&lt;code l="csh"&gt; <br>
+#!/usr/local/csh <br>
+echo "There are Hello World Shell\n";<br>
+&lt;/code&gt;
+<p></p>
+<br>
+<p></p>
+<h3><b>Example Command Execution</b></h3>
+<p></p>
+<p>This is a unix example of running the program. The code
+tag is a current default set as Perl. The -python option specifies
+python.<br>
+[home/user/george]$ sx.pl -version <br>
+sx.pl Version .2 <br>
+[home/user/george]$ sx.pl -file test.sx<br>
+Hello World [perl] <br>
+[home/user/george]$ sx.pl -f test.sx -python<br>
+Hello World [perl] <br>
+Hello World [python] <br>
+[home/user/george]$ sx.pl -f test.sx -python -ruby<br>
+Hello World [perl] <br>
+Hello World [python] <br>
+Hello World [ruby] <br>
+[home/user/george]$ sx.pl -f test_args.sx <br>
+There are 6 args <br>
+[home/user/george]$ sx.pl -f test_version.sx -pv 1.2b<br>
+This is program version 1.2b <br>
+</p>
+<br>
+<p></p>
+<h3>TO DO LIST:</h3>
+<p></p>
+<p>
+(1) Improve the tag parser.<br>
+(2) Add more command line options.<br>
+(3) Improve and complete error handling.<br>
+(4) Add more example scripts<br>
+</p>
+<br>
+<p></p>
+<h3>VERSION:</h3>
+<p></p>
+<p>The current multiscript version is .03.</p>
+<br>
+<p></p>
+<h3>LICENSE:</h3>
+<p></p>
+<p>This code has been released under the GPL and Artistic License</p>
+<br>
+<p></p>
+<h3>Author</h3>
+<p></p>
+<p>Nathan Ross</p>
+<p></p>
+<h3>Copyright</h3>
+<p></p>
+<p>&copy; 2005 Nathan Ross </p>
+</body>
+</html>
